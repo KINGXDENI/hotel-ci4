@@ -440,7 +440,7 @@ cursor: pointer;
   }
 
   .header__container {
-    padding-bottom: 25rem;
+    padding-bottom: 2rem;
   }
 
   .booking__container {
@@ -540,4 +540,93 @@ cursor: pointer;
 
 .delete-icon{
   color: red !important;
+}
+.badge {
+  position: relative;
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  background-color: red;
+}
+
+/* Gaya untuk menggeser badge ke ujung atas kanan */
+.badge-primary {
+  top: -11px;
+  right: -2px;
+}
+
+.regiscont {
+  margin-top: 7rem !important;
+}
+
+.logincont {
+  margin-top: 7rem !important;
+}
+
+@media (max-width: 767px) {
+  .regiscont {
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .regiscont {
+    width: 50% !important;
+  }
+}
+
+.nav__close {
+  display: none;
+  cursor: pointer;
+}
+.nav__hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.nav__hamburger i {
+  font-size: 24px;
+  color: #000;
+}
+
+/* Tampilan popup pada layar mobile */
+@media (max-width: 767px) {
+  .nav__links {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 99;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px;
+    /* Atur sesuai kebutuhan, untuk memberi ruang atas */
+  }
+
+  .nav__links.show {
+    display: flex;
+  }
+  .nav__close.show {
+    display: block;
+    margin-top: 5rem;
+    margin-left: 10rem;
+    z-index: 999;
+  }
+
+  .nav__hamburger {
+    right: 20px;
+    position: fixed;
+    display: block;
+  }
+
+  .nav__links .link {
+    margin-bottom: 16px;
+  }
 }

@@ -33,6 +33,7 @@
         <h1 class="h3 mb-4 text-gray-800">List Hotel</h1>
         <a href="<?= base_url('admin/create'); ?>" class="btn btn-success">Tambah</a>
     </div>
+      <div class="table-responsive">
    <table class="table table-striped">
       <thead>
         <tr>
@@ -61,7 +62,7 @@
       </tbody>
     </table>
 </div>
-
+</div>
 <script>
 function confirmDelete(event, id) {
   event.preventDefault();

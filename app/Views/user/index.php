@@ -8,7 +8,7 @@
       rel="stylesheet"
     />
      <link href=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.18/dist/sweetalert2.min.css " rel="stylesheet">
-
+    <link rel="icon" type="image/ico" href="<?= base_url('favicon.ico'); ?>">
     <link href="<?= base_url(); ?>/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="<?= base_url(''); ?>/css/styles.css" />
     <title>Hotel CI4</title>
@@ -16,11 +16,20 @@
   <body>
     <nav>
   <div class="nav__logo"><i class="fas fa-hotel"></i> HOTEL CI4</div>
+  <div class="nav__hamburger" id="menuIcon">
+    <i class="fas fa-bars"></i>
+  </div>
+  <div class="nav__close">
+      <i class="fas fa-times"></i>
+    </div>
+  <div class="nav__popup">
   <ul class="nav__links">
     <li class="link"><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Beranda</a></li>
    <li class="link">
     <a href="#" id="pesanDropdown" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true"
-        aria-expanded="false"> <i class="fas fa-calendar"></i> Pesan</a>
+        aria-expanded="false"> <i class="fas fa-calendar"></i> Pesan <?php if (!empty($bookings)) : ?>
+                    <span class="badge badge-primary"><?= count($bookings); ?></span>
+                <?php endif; ?></a>
     <div class="dropdown-menu" aria-labelledby="pesanDropdown" id="bookingDropdown">
         <?php if (empty($bookings)) : ?>
             <div class="dropdown-item">
@@ -50,6 +59,7 @@
     <li class="link"><a href="<?= base_url('login'); ?>"> <i class="	fas fa-sign-in"></i> Masuk</a></li>
     <?php endif; ?>
   </ul>
+</div>
 </nav>
 
     <header class="section__container header__container">
@@ -96,7 +106,16 @@
     <h2 class="section__header">Hotel Populer</h2>
     <div class="popular__grid">
         <?php foreach ($hotels as $hotel) : ?>
-            <div class="popular__card">
+    <?php
+    $isBooked = false;
+    foreach ($bookings as $booking) {
+        if ($hotel['id'] === $booking['hotel_id']) {
+            $isBooked = true;
+            break;
+        }
+    }
+    ?>
+    <div class="popular__card">
                 <img src="<?= base_url('upload/' . $hotel['gambar']); ?>" alt="popular hotel" />
                 <div class="popular__content">
                     <div class="popular__card__header">
@@ -106,7 +125,11 @@
                     <p><?= $hotel['lokasi']; ?></p>
                     <form action="<?= base_url('book-hotel'); ?>" method="post">
                         <input type="hidden" name="hotel_id" value="<?= $hotel['id']; ?>">
-                        <button type="submit" class="btn btn-booking">BOOKING</button>
+                         <?php if ($isBooked) : ?>
+                <button type="button" class="btn btn-booking" disabled>SUDAH DIBOOKING</button>
+            <?php else : ?>
+                <button type="submit" class="btn btn-booking">BOOKING</button>
+            <?php endif; ?>
                     </form>
                 </div>
             </div>
@@ -153,7 +176,25 @@
 document.addEventListener('DOMContentLoaded', function() {
   const pesanDropdown = document.getElementById('pesanDropdown');
   const bookingDropdown = document.getElementById('bookingDropdown');
+  const hamburger = document.querySelector('.nav__hamburger');
+  const navLinks = document.querySelector('.nav__links');
+  const closeBtn = document.querySelector('.nav__close');
 
+  // Fungsi untuk menampilkan popup menu
+      function showMenu() {
+        navLinks.classList.add('show');
+        closeBtn.classList.add('show');
+      }
+
+      // Fungsi untuk menyembunyikan popup menu
+      function hideMenu() {
+        navLinks.classList.remove('show');
+         closeBtn.classList.remove('show');
+      }
+
+      hamburger.addEventListener('click', showMenu);
+      closeBtn.addEventListener('click', hideMenu);
+      window.addEventListener('scroll', hideMenu);
   // Function to toggle the dropdown
   function toggleDropdown() {
     bookingDropdown.classList.toggle('show');
@@ -179,7 +220,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
-
     function confirmDeleteBooking(bookingUrl) {
         Swal.fire({
             title: 'Are you sure?',

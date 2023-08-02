@@ -1,7 +1,7 @@
 <?= $this->extend('auth/templates/index'); ?>
 
 <?= $this->section('content'); ?>
-    <div class="container">
+    <div class="container logincont">
 
         <!-- Outer Row -->
         <div class="row justify-content-center">
