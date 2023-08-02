@@ -51,11 +51,14 @@
           <th scope="row"><?= $i++; ?></th>
           <td><?= $hotel['nama']; ?></td>
           <td><?= $hotel['lokasi']; ?></td>
-          <td><?= $hotel['harga']; ?></td>
+          <td>Rp.<?= $hotel['harga']; ?></td>
           <td> <img src="<?= base_url('upload/' . $hotel['gambar']); ?>" alt="<?= $hotel['nama']; ?>" width="50px" height="50px"/></td>
           <td>
             <a href="<?= base_url('admin/edit/' . $hotel['id']); ?>" class="btn btn-primary">Edit</a>
             <a href="<?= base_url('admin/deletehotel/' . $hotel['id']); ?>" onclick="confirmDelete(event, '<?= $hotel['id']; ?>')" class="btn btn-danger">Hapus</a>
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#hotelModal<?= $hotel['id']; ?>">
+      Detail
+    </button>
           </td>
         </tr>
         <?php endforeach ?>
@@ -63,6 +66,30 @@
     </table>
 </div>
 </div>
+<!-- Create the modal for displaying hotel details -->
+<?php foreach ($hotels as $hotel) : ?>
+<div class="modal fade" id="hotelModal<?= $hotel['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="hotelModalLabel<?= $hotel['id']; ?>" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="hotelModalLabel<?= $hotel['id']; ?>">Detail Hotel <?= $hotel['nama']; ?></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Nama:</strong> <?= $hotel['nama']; ?></p>
+        <p><strong>Lokasi:</strong> <?= $hotel['lokasi']; ?></p>
+        <p><strong>Harga:</strong> Rp.<?= $hotel['harga']; ?></p>
+        <img src="<?= base_url('upload/' . $hotel['gambar']); ?>" alt="<?= $hotel['nama']; ?>" width="100%"/>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<?php endforeach; ?>
 <script>
 function confirmDelete(event, id) {
   event.preventDefault();

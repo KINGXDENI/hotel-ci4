@@ -136,35 +136,6 @@
         <?php endforeach; ?>
     </div>
 </section>
-
-
-
-    <section class="client">
-      <div class="section__container client__container">
-        <h2 class="section__header">Review</h2>
-        <div class="client__grid">
-          <div class="client__card">
-            <img src="<?= base_url(''); ?>/assets/client-1.jpg" alt="client" />
-            <p>
-              Proses pemesanan berjalan lancar, dan konfirmasinya langsung. Saya sangat merekomendasikan WDM&Co untuk pemesanan hotel tanpa ribet.
-            </p>
-          </div>
-          <div class="client__card">
-            <img src="<?= base_url(''); ?>/assets/client-2.jpg" alt="client" />
-            <p>
-              Website ini memberikan informasi detail tentang hotel, termasuk fasilitas, foto, yang membantu saya membuat keputusan yang terinformasi.
-            </p>
-          </div>
-          <div class="client__card">
-            <img src="<?= base_url(''); ?>/assets/client-3.jpg" alt="client" />
-            <p>
-              Saya dapat memesan kamar dalam hitungan menit, dan hotelnya melebihi harapan saya. Saya menghargai efisiensi dan keandalan WDM&Co.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <footer class="footer">
       <div class="section__container footer__container">
       <div class="footer__bar">

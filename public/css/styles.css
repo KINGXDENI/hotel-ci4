@@ -89,7 +89,7 @@ nav {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  border-radius: 2rem;
+  border-radius: 1rem;
 }
 .header__image__container {
   display: flex;
