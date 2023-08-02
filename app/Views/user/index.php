@@ -3,11 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-     <link href=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.18/dist/sweetalert2.min.css " rel="stylesheet">
+    <link rel="stylesheet" href="<?= base_url(); ?>/css/sweetalert2.min.css">
     <link rel="icon" type="image/ico" href="<?= base_url('favicon.ico'); ?>">
     <link href="<?= base_url(); ?>/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="<?= base_url(''); ?>/css/styles.css" />
@@ -209,5 +205,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 </script>
 
-  <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.18/dist/sweetalert2.all.min.js "></script>
+<script src="<?= base_url(); ?>/js/sweetalert2.all.min.js"></script>
 </html>
