@@ -22,9 +22,8 @@
 
 </head>
 
-<body class="bg-gradient-primary">
-
-    <?= $this->renderSection('content'); ?>
+<body class="bg-primary" id="login">
+<?= $this->renderSection('content'); ?>
 
     <!-- Bootstrap core JavaScript-->
     <script src="<?= base_url(); ?>/vendor/jquery/jquery.min.js"></script>
@@ -37,5 +36,6 @@
     <script src="<?= base_url(); ?>/js/sb-admin-2.min.js"></script>
 
 </body>
+
 
 </html>

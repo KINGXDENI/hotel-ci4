@@ -13,14 +13,14 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="/admin/listhotel">
                   <i class="fa fa-hotel"></i>
                     <span>Data Hotel</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="/admin/listuser">
                    <i class="fas fa-users"></i>
                     <span>Data Customer</span></a>
             </li>

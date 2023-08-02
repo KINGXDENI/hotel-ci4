@@ -2,13 +2,13 @@
 
 <?= $this->section('admin-content'); ?>
 <div class="container-fluid">
-   <h1 class="h3 mb-4 text-gray-800">User List Admin</h1>
+   <h1 class="h3 mb-4 text-gray-800">User List</h1>
    <table class="table table-striped">
   <thead>
     <tr>
       <th scope="col">No</th>
-      <th scope="col">Nama</th>
-      <th scope="col">Lokasi</th>
+      <th scope="col">Username</th>
+      <th scope="col">Email</th>
       <th scope="col">Role</th>
       <th scope="col">Action</th>
     </tr>

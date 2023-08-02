@@ -123,6 +123,7 @@ class App extends BaseConfig
      * @see http://php.net/htmlspecialchars for a list of supported charsets.
      */
     public string $charset = 'UTF-8';
+    
 
     /**
      * --------------------------------------------------------------------------

@@ -8,7 +8,7 @@
 
             <div class="col-md-6">
 
-                <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card border-0 shadow-lg my-5">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
@@ -21,14 +21,14 @@
                                     <form action="<?= url_to('login') ?>" method="post" class="user">
 						<?= csrf_field() ?>
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>"
+                                            <input type="email" class="form-control <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>"
 								   name="login" placeholder="<?=lang('Auth.email')?>">
 							<div class="invalid-feedback">
 								<?= session('errors.login') ?>
 							</div>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" name="password" class="form-control form-control-user <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>" placeholder="<?=lang('Auth.password')?>">
+                                            <input type="password" name="password" class="form-control <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>" placeholder="<?=lang('Auth.password')?>">
 							<div class="invalid-feedback">
 								<?= session('errors.password') ?>
 							</div>
@@ -41,7 +41,7 @@
                                             </div>
                                         </div>
                                         <?php endif; ?>
-                                        <button type="submit" class="btn btn-primary btn-user btn-block">
+                                        <button type="submit" class="btn btn-primary btn-block">
                                             <?=lang('Auth.loginAction')?>
                                         </button>
                                     </form>

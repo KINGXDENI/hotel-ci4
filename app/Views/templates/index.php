@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
     <title><?= $title; ?></title>
-
+    <link rel="shortcut icon" href="/" type="image/x-icon">
     <!-- Custom fonts for this template-->
     <link href="<?= base_url(); ?>/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="<?= base_url(); ?>/vendor/fontawesome-free-new/css/all.min.css" rel="stylesheet" type="text/css">
@@ -18,6 +18,7 @@
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
+    <link href=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.18/dist/sweetalert2.min.css " rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="<?= base_url(); ?>/css/sb-admin-2.min.css" rel="stylesheet">
 
@@ -111,7 +112,8 @@
 
     <!-- Custom scripts for all pages-->
     <script src="<?= base_url(); ?>/js/sb-admin-2.min.js"></script>
-
+    
+<script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.18/dist/sweetalert2.all.min.js "></script>
 </body>
 
 </html>

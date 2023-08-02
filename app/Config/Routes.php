@@ -29,10 +29,23 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+$routes->get('/', 'Admin::listHotel');
 $routes->get('/', 'User::index');
-$routes->get('/Admin', 'Admin::index', ['filter' => 'role:admin']);
-$routes->get('/Admin/index', 'Admin::index', ['filter' => 'role:admin']);
-$routes->get('/Admin/(:num)', 'Admin::detail/$1', ['filter' => 'role:admin']);
+$routes->get('/user', 'User::index');
+$routes->get('/user/index', 'User::index');
+$routes->get('/user/deletebooking/(:num)', 'User::deleteBooking/$1');
+
+$routes->get('/admin', 'Admin::listHotel');
+$routes->get('/admin/listuser', 'Admin::listUser');
+$routes->get('/admin/listhotel', 'Admin::listHotel');
+$routes->get('/admin/create', 'Admin::create');
+$routes->post('/admin/save', 'Admin::save');
+$routes->get('admin/edit/(:num)', 'Admin::edit/$1');
+$routes->post('admin/update/(:num)', 'Admin::update/$1');
+$routes->get('admin/deletehotel/(:num)', 'Admin::deleteHotel/$1');
+$routes->get('/admin/(:num)', 'Admin::index');
+
+$routes->post('book-hotel', 'BookingController::bookHotel');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
